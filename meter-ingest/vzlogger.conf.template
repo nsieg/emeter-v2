@@ -1,0 +1,56 @@
+{
+  "retry": 0,
+  "verbosity": 1,
+  "local": {
+    "enabled": false,
+    "port": 8080,
+    "index": false,
+    "timeout": 0,
+    "buffer": 0
+  },
+  "meters": [
+    {
+      "enabled": true,
+      "allowskip": false,
+      "use_local_time": true,
+      "protocol": "sml",
+      "device": "/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0031-if00-port0",
+      "baudrate": 9600,
+      "parity": "8n1",
+      "aggtime": 60,
+      "aggfixedinterval": true,
+      "channels": [
+        {
+          "api": "influxdb",
+          "uuid": "1ec96212-429e-45cf-b30c-e41400724b71",
+          "identifier": "1-0:1.8.0",
+          "host": "http://localhost:8086",
+          "database": "",
+          "organization": "",
+          "measurement_name": "",
+          "tags": "meter=main-reading",
+          "token": "",
+          "max_batch_inserts": 4500,
+          "max_buffer_size": 450000,
+          "timeout": 30,
+          "aggmode": "max"
+        },
+        {
+          "api": "influxdb",
+          "uuid": "1ec96212-429e-45cf-b30c-e41400724b71",
+          "identifier": "1-0:16.7.0",
+          "host": "http://localhost:8086",
+          "database": "",
+          "organization": "",
+          "measurement_name": "",
+          "tags": "meter=main-acute-power",
+          "token": "",
+          "max_batch_inserts": 4500,
+          "max_buffer_size": 450000,
+          "timeout": 30,
+          "aggmode": "none"
+        }        
+      ]
+    }
+  ]
+}

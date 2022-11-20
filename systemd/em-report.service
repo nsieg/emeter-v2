@@ -1,0 +1,12 @@
+[Unit]
+Description=em-report
+
+[Service]
+User=nils
+WorkingDirectory=/opt/energymeter
+ExecStart=/opt/energymeter/em-report
+EnvironmentFile=/opt/energymeter/emeter.env
+Restart=no
+
+[Install]
+WantedBy=multi-user.target

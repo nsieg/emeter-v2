@@ -1,0 +1,10 @@
+[Unit]
+Description=em-backup-export-timer
+
+[Timer]
+OnBootSec=3min
+OnUnitActiveSec=5min
+Unit=em-backup-export.service
+
+[Install]
+WantedBy=multi-user.target

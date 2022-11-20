@@ -1,0 +1,10 @@
+[Unit]
+Description=em-shelly-timer
+
+[Timer]
+OnBootSec=3min
+OnUnitActiveSec=1min
+Unit=em-shelly.service
+
+[Install]
+WantedBy=multi-user.target

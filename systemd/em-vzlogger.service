@@ -1,0 +1,11 @@
+[Unit]
+Description=em-vzlogger
+
+[Service]
+User=root
+WorkingDirectory=/opt/energymeter
+ExecStart=/opt/energymeter/vzlogger -c /opt/energymeter/vzlogger.conf --foreground
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

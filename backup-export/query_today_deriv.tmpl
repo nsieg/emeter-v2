@@ -1,0 +1,5 @@
+from(bucket: "energy")
+|> range(start: today(), stop: now())
+|> filter(fn: (r) => r["meter"] == "{{ .meter }}")
+|> derivative(nonNegative: true)
+|> map(fn: (r) => ({ r with _unix: uint(v: r._time) / uint(v:1000000000) }))

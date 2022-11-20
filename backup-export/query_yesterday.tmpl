@@ -1,0 +1,6 @@
+import "experimental"
+
+from(bucket: "energy")
+|> range(start: experimental.subDuration(d: 1d, from: today()), stop: today())
+|> filter(fn: (r) => r["meter"] == "{{ .meter }}")
+|> map(fn: (r) => ({ r with _unix: uint(v: r._time) / uint(v:1000000000) }))

@@ -1,0 +1,9 @@
+[Unit]
+Description=em-report-timer
+
+[Timer]
+OnCalendar=*-*-* 07:00:00
+Unit=em-report.service
+
+[Install]
+WantedBy=multi-user.target

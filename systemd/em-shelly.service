@@ -1,0 +1,12 @@
+[Unit]
+Description=em-shelly
+
+[Service]
+User=nils
+WorkingDirectory=/opt/energymeter
+ExecStart=/opt/energymeter/em-shelly
+EnvironmentFile=/opt/energymeter/emeter.env
+Restart=no
+
+[Install]
+WantedBy=multi-user.target

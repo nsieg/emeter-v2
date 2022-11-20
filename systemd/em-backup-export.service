@@ -1,0 +1,12 @@
+[Unit]
+Description=em-backup-export
+
+[Service]
+User=nils
+WorkingDirectory=/opt/energymeter
+ExecStart=/opt/energymeter/em-backup-export
+EnvironmentFile=/opt/energymeter/emeter.env
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
